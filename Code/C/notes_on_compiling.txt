@@ -1,0 +1,18 @@
+STANDARD (no debugging and no compiler optimization)
+gcc -o main main.c prob_workspace.c ./solver_code/src/*.c ./solver_code/external/amd/src/*.c ./solver_code/external/ldl/src/*.c -I ./solver_code/external/amd/include -I ./include -I ./solver_code/external/include -I ./solver_code/external/ldl/include
+
+WITH GDB (adds -g)
+gcc -g -o main main.c prob_workspace.c ./solver_code/src/*.c ./solver_code/external/amd/src/*.c ./solver_code/external/ldl/src/*.c -I ./solver_code/external/amd/include -I ./include -I ./solver_code/external/include -I ./solver_code/external/ldl/include
+
+WITH GDB and OPTIMIZATION (adds -g and -O3)
+gcc -g -O3 -o main main.c prob_workspace.c ./solver_code/src/*.c ./solver_code/external/amd/src/*.c ./solver_code/external/ldl/src/*.c -I ./solver_code/external/amd/include -I ./include -I ./solver_code/external/include -I ./solver_code/external/ldl/include
+
+If not using GDB
+./main
+
+If using GDB
+gdb ./main
+run
+(Ctrl+C)
+<debug if required here, e.g., backtrace>
+
